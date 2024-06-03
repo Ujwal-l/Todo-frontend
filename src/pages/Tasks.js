@@ -12,17 +12,17 @@ const Tasks = () => {
   const fetchTasks = async () => {
     try {
       const response = await axios.get(
-        "https://todo-backend-2-qke1.onrender.com"
+        "https://todo-backend-v2gd.onrender.com"
       );
       setTasks(response.data);
     } catch (error) {
-      console.error("Error fetching tasks:", error.message);
+      console.error("Error fetching tasks:", error.message); 
     }
   };
 
   const markTaskAsDone = async (id) => {
     try {
-      await axios.put(`https://todo-backend-2-qke1.onrender.com/tasks/:id`, {
+      await axios.put(`https://todo-backend-v2gd.onrender.com/tasks/:id`, {
         is_done: true,
       });
       fetchTasks();
@@ -34,7 +34,7 @@ const Tasks = () => {
   const deleteTask = async (id) => {
     try {
       console.log(`Deleting task with ID: ${id}`);
-      await axios.delete(`https://todo-backend-2-qke1.onrender.com/tasks/:id`);
+      await axios.delete(`https://todo-backend-v2gd.onrender.com/tasks/:id`);
       fetchTasks();
     } catch (error) {
       console.error("Error deleting task:", error.message);
@@ -44,7 +44,7 @@ const Tasks = () => {
   const onFinish = async (values) => {
     try {
       // Send data to the server to add a new task
-      await axios.post("https://todo-backend-2-qke1.onrender.com/tasks", {
+      await axios.post("https://todo-backend-v2gd.onrender.com/tasks", {
         username: values.Name,
         task: values.TaskName,
       });
