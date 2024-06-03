@@ -30,7 +30,7 @@ const App = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/tasks");
+      const response = await axios.get("https:todo-backend-v2gd.onrender.com/tasks");
       setTasks(response.data);
     } catch (error) {
       console.error("Error fetching tasks:", error);
@@ -41,7 +41,7 @@ const App = () => {
     setSearchQuery(query);
     try {
       const response = await axios.get(
-        `http://localhost:3001/tasks/search?q=${query}`
+        `https://todo-backend-v2gd.onrender.com/tasks/search?q=${query}`
       );
       setTasks(response.data);
     } catch (error) {
