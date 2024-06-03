@@ -7,7 +7,7 @@ const AddTask = ({ fetchTasks }) => {
   const [task, setTask] = useState("");
 
   const addTask = async () => {
-    await axios.post("https://todo-backend-2-qke1.onrender.com", {
+    await axios.post("https://todo-backend-2-qke1.onrender.com/tasks", {
       username,
       task,
     });
